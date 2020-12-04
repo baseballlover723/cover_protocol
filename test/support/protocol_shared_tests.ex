@@ -3,7 +3,9 @@ defmodule ProtocolSharedTests do
     quote do
       use ExUnit.Case
       @iter 1_000_000
-      @types [int: 0, map: %{}, string: ""]
+      @class_params [name: "name", age: 4, phone: "123"]
+#      @types [int: 0, map: %{}, string: "", class1: struct(Class1, @class_params)]
+      @types [int: 0, map: %{}, string: "", class1: struct(Class1, @class_params), class2: struct(Class2, @class_params), class3: struct(Class3, @class_params), class4: struct(Class4, @class_params), class5: struct(Class5, @class_params), class6: struct(Class6, @class_params)]
 
       @moduletag unquote(options)
       [protocol: protocol] = unquote(options)
